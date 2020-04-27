@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+const PORT = 3000;
 
-app.listen(3000,()=>{console.log("listening on Port 3000")});
-app.get('/',(req,res)=>{res.send("HELLO WORLD")});
+app.listen(PORT, () => { console.log(`listening on Port ${PORT}`) });
+app.set('view engine', 'ejs');
+app.get('/', (req, res) => { res.render('pages/home'); });
